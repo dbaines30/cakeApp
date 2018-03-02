@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CakesListing</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <button ion-item *ngFor="let cake of cakes" (click)="selectCake(cake)">
+          <ion-avatar item-start>
+            <img [src]="cake.imageUrl">
+          </ion-avatar>
+          <h2>{{cake.name}}</h2>
+        </button>
+      </ion-list>
+</ion-content>

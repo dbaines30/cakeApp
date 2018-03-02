@@ -8,8 +8,12 @@
 
 <ion-content padding>
   <ion-img  width="80" height="80" src="../../assets/icon/slice-of-cake-144-217049.png"></ion-img>
-  <h1>Here are your cakes</h1>
+  <h1>Its a <b>Piece of Cake</b></h1>
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    Welcome to Piece of Cake. To view the cakes already entered simply click on the button below.
   </p>
+  <button ion-button block icon-right (click)="goCakeList()" medium>
+      View Cakes
+      <ion-icon name="list"></ion-icon>
+    </button>
 </ion-content>

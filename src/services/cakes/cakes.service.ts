@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { AppSettingsService } from "./appSettings.service";
+import { AppSettingsService } from "../appSettings/appSettings.service";
 import { Observable } from "rxjs/Observable";
 import { HttpClient } from "@angular/common/http";
 
 // Models
-import { CakeModel } from "../models/cake.model";
+import { CakeModel } from "../../models/cake.model";
 
 @Injectable()
 export class CakesService {

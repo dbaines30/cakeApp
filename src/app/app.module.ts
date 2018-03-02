@@ -1,11 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
+// Pages
 import { HomePage } from '../pages/home/home';
+import { AddCakePage } from '../pages/add-cake/add-cake';
+import { CakesListingPage } from '../pages/cakes-listing/cakes-listing';
+
+// components
+import { CakeInfoDetailComponent } from '../components/cake-info-detail/cake-info-detail';
+import { CakeInfoShortComponent } from '../components/cake-info-short/cake-info-short';
 
 // Services
 import { AppSettingsService } from '../services/appSettings/appSettings.service';
@@ -14,16 +23,25 @@ import { CakesService } from '../services/cakes/cakes.service';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AddCakePage,
+    CakesListingPage,
+    CakeInfoDetailComponent,
+    CakeInfoShortComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AddCakePage,
+    CakesListingPage,
+    CakeInfoDetailComponent,
+    CakeInfoShortComponent
   ],
   providers: [
     StatusBar,
