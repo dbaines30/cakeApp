@@ -1,1 +1,14 @@
-
+<h1>{{cake?.name}}</h1>
+<ion-list *ngIf="cake">
+  <ion-item>
+    <h2>Comment</h2>
+    <p>{{cake.comment}}</p>
+  </ion-item>
+  <ion-item>
+    <h2>Rating</h2>
+    <rating [(ngModel)]="cake.yumFactor" [readOnly]="!isEditing"></rating>
+  </ion-item>
+  <ion-item>
+    <ion-img width="400" height="400" [src]="cake.imageUrl"></ion-img>
+  </ion-item>
+</ion-list>

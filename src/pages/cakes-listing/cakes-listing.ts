@@ -4,7 +4,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { CakesService } from "../../services/cakes/cakes.service";
 import { CakeModel } from "../../models/cake.model";
 
-import {} from '../'
+import { CakeDetailPage } from '../cake-detail/cake-detail'
 
 @Component({
   selector: "page-cakes-listing",
@@ -30,6 +30,6 @@ export class CakesListingPage {
   }
 
   selectCake(cake: CakeModel){
-    this.navCtrl.push()
+    this.navCtrl.push(CakeDetailPage, cake)
   }
 }
