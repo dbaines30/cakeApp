@@ -22,19 +22,17 @@ export class CakesService {
   public cakesSubject = new BehaviorSubject<Array<CakeModel>>(null);
 
   public AddCake(cake: CakeModel): Observable<CakeModel> {
-    // let observable = this.http.post<CakeModel>(
-    //   `${this.appSettings.urRoot}/cakes`,
-    //   cake
-    // );
+    let observable = this.http.post<CakeModel>(
+      `${this.appSettings.urRoot}/cakes`,
+      cake
+    );
 
-    // observable.subscribe(cake => this.cakes.push(cake));
+    observable.subscribe(cake => {
+      this.cakes.push(cake);
+      this.cakesSubject.next(this.cakes);
+    });
 
-    // return observable;
-
-    this.cakes.push(cake);
-    this.cakesSubject.next(this.cakes);
-
-    return null;
+    return observable;
   }
 
   private getCakes() {
