@@ -12,7 +12,7 @@ From a command prompt clone this repo using the follwing command.
 
 Then move to the new directory.
 
-`cd cakeApp`.
+`cd cakeApp`
 
 # Installation
 To install the required libraries you can use `npm` or `yarn` package managers. `Yarn` will almost certainly give faster results.
