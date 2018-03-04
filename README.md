@@ -28,6 +28,7 @@ To start the application singly use the following command.
 
 ## Mobile emulation mode:
 You can select 3 different mobile systems to view the application side by side.
+
 `ionic serve --lab`
 
 ## Desktop mode: 
