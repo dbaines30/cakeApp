@@ -16,7 +16,6 @@ import { CakeDetailPage } from '../pages/cake-detail/cake-detail';
 
 // components
 import { CakeInfoDetailComponent } from '../components/cake-info-detail/cake-info-detail';
-import { CakeInfoShortComponent } from '../components/cake-info-short/cake-info-short';
 
 // Services
 import { AppSettingsService } from '../services/appSettings/appSettings.service';
@@ -29,8 +28,7 @@ import { CakesService } from '../services/cakes/cakes.service';
     AddCakePage,
     CakesListingPage,
     CakeDetailPage,
-    CakeInfoDetailComponent,
-    CakeInfoShortComponent
+    CakeInfoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +43,7 @@ import { CakesService } from '../services/cakes/cakes.service';
     AddCakePage,
     CakesListingPage,
     CakeDetailPage,
-    CakeInfoDetailComponent,
-    CakeInfoShortComponent
+    CakeInfoDetailComponent
   ],
   providers: [
     StatusBar,

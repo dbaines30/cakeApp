@@ -1,14 +1,46 @@
-<h1>{{cake?.name}}</h1>
-<ion-list *ngIf="cake">
-  <ion-item>
-    <h2>Comment</h2>
-    <p>{{cake.comment}}</p>
+<h1 *ngIf="!isEditing">{{boundCake?.name}}</h1>
+<h1 *ngIf="isEditing">New Cake</h1>
+<p *ngIf="isEditing">Please tell me about the new cake</p>
+
+<ion-list *ngIf="boundCake">
+
+  <!-- Name -->
+  <ion-item *ngIf="isEditing">
+      <ion-label floating>Cake Name</ion-label>
+      <ion-input type="text" [(ngModel)]="boundCake.name" ></ion-input>
   </ion-item>
+
+  <!-- Comment -->
+  <ion-item *ngIf="!isEditing">
+    <h2>Comment</h2>
+    <p>{{boundCake.comment}}</p>
+  </ion-item>
+  <ion-item *ngIf="isEditing">
+      <ion-label floating>Add a Comment</ion-label>
+      <ion-input type="text" [(ngModel)]="boundCake.comment" ></ion-input>
+  </ion-item>
+
+  <!-- Rating -->
   <ion-item>
     <h2>Rating</h2>
-    <rating [(ngModel)]="cake.yumFactor" [readOnly]="!isEditing"></rating>
+    <rating [(ngModel)]="boundCake.yumFactor" [readOnly]="!isEditing"></rating>
   </ion-item>
-  <ion-item>
-    <ion-img width="400" height="400" [src]="cake.imageUrl"></ion-img>
+
+  <!-- Image -->
+  <ion-item *ngIf="!isEditing">
+    <ion-img width="400" height="400" [src]="boundCake.imageUrl"></ion-img>
   </ion-item>
+  <ion-item *ngIf="isEditing">
+      <ion-label floating>Add an Image</ion-label>
+      <ion-input type="text" [(ngModel)]="boundCake.imageUrl" ></ion-input>
+  </ion-item>
+
+  <!-- Save Changes -->
+  <ion-item *ngIf="isEditing">
+      <button ion-button icon-right (click)="saveCake()" large>
+          Save Cake
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+  </ion-item>
+
 </ion-list>
